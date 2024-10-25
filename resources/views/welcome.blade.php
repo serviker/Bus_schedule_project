@@ -15,7 +15,6 @@
         <ul class="menu-list">
             <li><a href="{{ url('/api/buses') }}">View</a></li>
             <li><a href="{{ url('/api/find-bus') }}">Search</a></li>
-            <li><a href="{{ url('/edit') }}">Edit</a></li>
         </ul>
     </div>
 </div>
