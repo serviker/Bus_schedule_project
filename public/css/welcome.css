@@ -1,0 +1,90 @@
+/*!* Например, в resources/css/app.css или resources/css/welcome.css *!*/
+/* welcome.css */
+
+.welcome-container {
+    width: 40%;
+    max-width: 100%;
+    height: 40vh;
+    border-radius: 10px;
+    position: relative;
+    background-color: #eaeaea;
+    padding: 20px 30px;
+    overflow: visible;
+    margin: auto;
+    display: flex;
+    flex-direction: column; /* Вертикальное размещение элементов */
+    justify-content: center; /* Центровка по вертикали */
+    align-items: center; /* Центровка по горизонтали */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень для контейнера */
+}
+
+.menu-container {
+    width: 100%; /* Занимает всю ширину контейнера */
+}
+
+.menu-list {
+    list-style: none; /* Убирает маркеры у списка */
+    padding: 0; /* Убирает отступы у списка */
+    margin: 0; /* Убирает поля у списка */
+    display: flex; /* Flexbox для размещения элементов в ряд */
+    flex-direction: column; /* Вертикальное размещение пунктов меню */
+    gap: 10px; /* Расстояние между пунктами меню */
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.menu-list li {
+    width: 100%; /* Занимает всю ширину контейнера */
+}
+
+.menu-list a {
+    display: block; /* Чтобы элемент ссылки занимал весь доступный блок */
+    padding: 15px; /* Отступ внутри прямоугольника */
+    text-align: center; /* Центровка текста */
+    text-decoration: none; /* Убирает подчеркивание */
+    color: #333; /* Цвет текста */
+    background-color: #f5f5f5; /* Цвет фона по умолчанию */
+    border: 2px solid transparent; /* Прозрачная рамка */
+    border-radius: 5px; /* Закругленные углы */
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Плавный переход для фона и рамки */
+}
+
+/* Эффект при наведении */
+.menu-list a:hover {
+    background-color: #d1e7dd; /* Цвет фона при наведении */
+    border-color: #0f5132; /* Цвет рамки при наведении */
+}
+
+/* Эффект при нажатии */
+.menu-list a:active {
+    background-color: #c3e6cb; /* Цвет фона при нажатии */
+    border-color: #0b423b; /* Цвет рамки при нажатии */
+    transform: translateY(2px); /* Эффект нажатия */
+}
+
+ /*resources/css/welcome.css*/
+/*.welcome-container {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*    height: 100vh; !* Высота экрана *!*/
+/*}*/
+
+/*.menu-container {*/
+/*    margin-top: 20px; !* Отступ сверху *!*/
+/*}*/
+
+/*.menu-list {*/
+/*    list-style-type: none;*/
+/*    padding: 0;*/
+/*}*/
+
+/*.menu-list li {*/
+/*    margin: 10px 0; !* Отступ между пунктами меню *!*/
+/*}*/
+
+/*.menu-list a {*/
+/*    text-decoration: none; !* Убираем подчеркивание *!*/
+/*    color: #007bff; !* Цвет ссылки *!*/
+/*}*/
