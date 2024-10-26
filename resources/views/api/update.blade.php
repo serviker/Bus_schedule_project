@@ -48,18 +48,13 @@
             <input type="text" class="form-control" id="new_stop_name" name="new_stop_name" placeholder="Название новой остановки">
             <input type="hidden" name="bus_id" value="{{ $busId }}">
             <input type="hidden" name="interval" value="{{ $interval }}">
-            <!-- Чекбокс для добавления новой остановки в маршрут -->
-            <div class="form-check mt-2">
-                <input type="checkbox" class="form-check-input" id="add_new_stop_to_route" name="add_new_stop_to_route">
-                <label class="form-check-label" for="add_new_stop_to_route">Добавить новую остановку в маршрут</label>
-            </div>
         </div>
 
 
         <div class="button-group">
             <button type="submit" class="btn btn-primary">Обновить маршрут</button>
             <!-- Кнопка для возврата в меню -->
-            <a href="{{ route('home') }}" class="btn btn-success">Вернуться в меню</a>
+            <a href="{{ route('api.index') }}" class="btn btn-success" style="background: #0b423b">Перейти к таблицам</a>
         </div>
     </form>
 

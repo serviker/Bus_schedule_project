@@ -26,8 +26,6 @@ class UpdateController extends Controller
             // Получаем bus_id через связанные остановки
             $busStop = $route->stops()->select('bus_id')->first();
             $busId = $busStop ? $busStop->bus_id : null;
-            // Логируем значение busId
-           // Log::info('Received busId:', ['busId' => $busId]); // Обратите внимание на массив
 
             $busStop = BusStop::find($id);
             $interval = $busStop->interval;

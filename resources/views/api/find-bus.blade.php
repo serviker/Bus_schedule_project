@@ -2,36 +2,37 @@
 
 @section('content')
     <div class="container d-flex justify-content-center align-items-center flex-column vh-100">
-        <div class="text-center w-75 container d-flex justify-content-center align-items-center flex-column vh-100">
+        <div class="text-center w-75">
             <!-- Заголовок и кнопка на главную -->
             <div class="d-flex justify-content-between align-items-center mb-4">
-                <a href="{{ route('home') }}" class="btn btn-secondary">На главную</a>
+                <a href="{{ route('home') }}" class="btn btn-secondary" style="background: #0f5132">На главную</a>
                 <h1>Поиск автобусов</h1>
-
             </div>
 
             <!-- Форма для поиска -->
-            <form action="{{ route('api.find-bus') }}" method="GET" class="mb-4">
-                <div class="row justify-content-center">
-                    <div class="col-md-5 mb-3">
-                        <label for="from">Исходная остановка</label>
+            <form action="{{ route('api.find-bus') }}" method="GET" class="mb-4 p-4 border rounded shadow">
+                <div class="d-flex justify-content-center align-items-center mb-3">
+                    <div class="col-md-5 mb-3 pe-2"> <!-- Добавлен отступ справа -->
+                        <label for="from" class="form-label">Исходная остановка</label>
                         <input type="text" name="from" id="from" class="form-control"
                                placeholder="Введите ID исходной остановки" required>
                     </div>
-                    <div class="col-md-5 mb-3">
-                        <label for="to">Конечная остановка</label>
+                    <div class="col-md-5 mb-3 pe-2"> <!-- Добавлен отступ справа -->
+                        <label for="to" class="form-label">Конечная остановка</label>
                         <input type="text" name="to" id="to" class="form-control"
                                placeholder="Введите ID конечной остановки" required>
                     </div>
-                    <div class="col-md-2 align-self-end">
-                        <button type="submit" class="btn btn-primary w-100">Найти</button>
+                    <div class="col-md-2 mb-3">
+                        <button type="submit" class="btn btn-primary w-100" style="margin-top: 30px">Найти</button>
                     </div>
                 </div>
+
+
             </form>
 
             <!-- Вывод названий остановок -->
             @if(isset($from) && isset($to))
-                <h2 class="mb-4">Результаты поиска для маршрута от ост. <strong>{{ $from }}</strong> до ост. <strong>{{ $to }}</strong></h2>
+                <h2 class="mb-4">Результаты поиска для маршрута: <br> от ост. <strong>{{ $from }}</strong> до ост. <strong>{{ $to }}</strong></h2>
             @endif
 
             <!-- Вывод результатов поиска -->
