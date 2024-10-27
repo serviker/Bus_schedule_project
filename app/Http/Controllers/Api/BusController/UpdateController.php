@@ -159,6 +159,38 @@ class UpdateController extends Controller
                         }
                     }
                 }
+                foreach ($buses as $bus) {
+                    // Находим последнюю остановку для любого автобуса
+                    $maxStopOrder = $route->stops()
+                        ->where('bus_id', $bus->id)
+                        ->max('stop_order');
+
+                    if ($maxStopOrder) {
+                        $lastStop = $route->stops()
+                            ->where('bus_id', $bus->id)
+                            ->where('stop_order', $maxStopOrder)
+                            ->first();
+
+                        if ($lastStop) {
+                            // Базовое название маршрута без конечной остановки
+                            $baseName = 'Маршрут №' . $route->route_number;
+
+                            // Если текущее имя маршрута уже содержит конечную остановку, убираем её
+                            $currentName = $route->name;
+                            if (str_contains($currentName, 'в сторону ост.')) {
+                                $currentName = substr($currentName, 0, strpos($currentName, 'в сторону ост.'));
+                            }
+
+                            // Обновляем имя маршрута, добавляя актуальную конечную остановку
+                            $route->update([
+                                'name' => trim($currentName) . ' в сторону ост. ' . $lastStop->name,
+                            ]);
+                            break; // Достаточно обновить один раз
+                        }
+                    }
+                }
+
+
 
                 return response()->json(['message' => 'Маршрут успешно обновлен!']);
             }

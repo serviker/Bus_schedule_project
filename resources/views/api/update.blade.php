@@ -14,7 +14,6 @@
             justify-content: space-between;
             align-content: center;
         }
-
     </style>
 </head>
 <body>
@@ -50,11 +49,10 @@
             <input type="hidden" name="interval" value="{{ $interval }}">
         </div>
 
-
         <div class="button-group">
             <button type="submit" class="btn btn-primary">Обновить маршрут</button>
             <!-- Кнопка для возврата в меню -->
-            <a href="{{ route('api.index') }}" class="btn btn-success" style="background: #0b423b">Перейти к таблицам</a>
+            <a href="{{ route('home') }}" class="btn btn-success" style="background: #0b423b">На главную</a>
         </div>
     </form>
 
@@ -89,10 +87,10 @@
                 } else {
                     messageDiv.innerHTML = `<div class="alert alert-success">${data.message}</div>`;
 
-                    // Используем window.location.reload() для принудительной перезагрузки страницы
+                    // Перенаправление на таблицы маршрутов
                     setTimeout(() => {
-                        window.location.reload(true); // Перезагружаем страницу, принудительно загружая её с сервера
-                    }, 300);  // Задержка в 1 секунду перед перезагрузкой страницы
+                        window.location.href = "{{ url('/api/buses') }}"; // Переход к таблицам
+                    }, 300);  // Задержка перед перенаправлением
                 }
             })
             .catch(error => {
@@ -100,7 +98,6 @@
                 messageDiv.innerHTML = `<div class="alert alert-danger">Ошибка обновления маршрута!</div>`;
             });
     };
-
 </script>
 
 </body>

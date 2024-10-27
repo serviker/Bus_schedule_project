@@ -6,7 +6,7 @@
             <!-- Заголовок и кнопка на главную -->
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <a href="{{ route('home') }}" class="btn btn-secondary" style="background: #0f5132">На главную</a>
-                <h1>Поиск автобусов</h1>
+                <h1 style="text-align: center">Поиск автобусов</h1>
             </div>
 
             <!-- Форма для поиска -->

@@ -64,8 +64,9 @@
     <h1>Расписание автобусов!</h1>
     <div class="menu-container">
         <ul class="menu-list">
-            <li><a href="{{ url('/api/buses') }}">View</a></li>
-            <li><a href="{{ url('/api/find-bus') }}">Search</a></li>
+            <li><a href="{{ url('/api/buses') }}">Посмотреть все маршруты</a></li>
+            <li><a href="{{ url('/api/find-bus') }}">Поиск маршрута</a></li>
+            <li><a href="{{ route('create-route') }}">Добавить новый маршрут</a></li>
         </ul>
     </div>
 </div>

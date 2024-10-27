@@ -24,8 +24,10 @@ Route::prefix('api')->group(function () {
     // Поиск автобусов с указанием остановок
     Route::get('/find-bus', [IndexController::class, '__invoke'])->name('api.find-bus');
 
-    // Создание автобуса
-    Route::post('/buses', StoreController::class)->name('api.store');
+    // Создание маршрутов автобусов
+    Route::post('/store', [StoreController::class, '__invoke'])->name('api.store');
+
+    Route::get('/create-route', function () { return view('api.create-route'); })->name('create-route');
 
     // Показ информации об одном автобусе по ID
     Route::get('/buses/{id}', ShowController::class)->name('api.show');

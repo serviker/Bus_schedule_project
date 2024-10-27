@@ -61,30 +61,3 @@
     border-color: #0b423b; /* Цвет рамки при нажатии */
     transform: translateY(2px); /* Эффект нажатия */
 }
-
- /*resources/css/welcome.css*/
-/*.welcome-container {*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    align-items: center;*/
-/*    justify-content: center;*/
-/*    height: 100vh; !* Высота экрана *!*/
-/*}*/
-
-/*.menu-container {*/
-/*    margin-top: 20px; !* Отступ сверху *!*/
-/*}*/
-
-/*.menu-list {*/
-/*    list-style-type: none;*/
-/*    padding: 0;*/
-/*}*/
-
-/*.menu-list li {*/
-/*    margin: 10px 0; !* Отступ между пунктами меню *!*/
-/*}*/
-
-/*.menu-list a {*/
-/*    text-decoration: none; !* Убираем подчеркивание *!*/
-/*    color: #007bff; !* Цвет ссылки *!*/
-/*}*/
